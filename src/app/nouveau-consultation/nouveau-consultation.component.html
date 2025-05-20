@@ -27,7 +27,7 @@
       <ion-input [(ngModel)]="searchText" (ionInput)="filterItems($event)"></ion-input>
     </ion-item>
 
-      <ion-spinner *ngIf="isDataReady"></ion-spinner>
+    <ion-spinner *ngIf="isDataReady"></ion-spinner>
 
 
     <ion-list *ngIf="filteredItems.length > 0">
@@ -36,6 +36,9 @@
       </ion-item>
     </ion-list>
   </div>
+
+  <h5 class="text-center my-3 py-2 border-bottom shadow-sm bg-light"><span class="fw-bold">Ordonnance de
+      :</span><br>{{searchText}}</h5>
 
 
 

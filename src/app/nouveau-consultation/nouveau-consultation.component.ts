@@ -11,7 +11,7 @@ export class NouveauConsultationComponent implements OnInit {
   data: any;
   searchText: string = '';
   // items: string[] = ['Option 1', 'Option 2', 'Option 3', 'Autre'];
-  filteredItems: any;
+filteredItems: any[] = [];
   constructor(private http: HttpClient) { }
   items: any;
   isDataReady = false;
@@ -45,6 +45,7 @@ export class NouveauConsultationComponent implements OnInit {
   }
 
   selectItem(item: any) {
+    console.log(item);
     this.searchText = `${item.nom} ${item.prenoms} (${item.societe})`;
     this.filteredItems = [];
     console.log(this.searchText);
