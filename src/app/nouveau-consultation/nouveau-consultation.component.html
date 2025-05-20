@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+
+    <!-- Bouton de retour -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <!-- Logo + Titre -->
+    <ion-title>
+      <div class="d-flex justify-content-start align-items-center">
+        <ion-icon name="person-add-outline" size="large"></ion-icon>
+        <span class="fw-bold fs-5 mx-3">Nouvelle Consultation</span>
+      </div>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Patient</ion-label>
+      <ion-input [(ngModel)]="searchText" (ionInput)="filterItems($event)"></ion-input>
+    </ion-item>
+
+      <ion-spinner *ngIf="isDataReady"></ion-spinner>
+
+
+    <ion-list *ngIf="filteredItems.length > 0">
+      <ion-item button *ngFor="let item of filteredItems" (click)="selectItem(item)">
+        {{ item.nom }} {{ item.prenoms }} - ({{ item.societe }})
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+
+</ion-content>

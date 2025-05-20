@@ -1,27 +1,29 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.card:hover {
+  background: #198754;
+  transform: scale(1.03);
+  box-shadow: 0 0 24px 4px #38ff8e, 0 2px 8px rgba(0,0,0,0.08); // effet fluorescent
+    box-shadow:
+    0 0 40px 10px #38ff8e,   // halo fluorescent principal
+    0 0 8px 2px #198754,      // renforce la couleur de fond
+    0 2px 8px rgba(0,0,0,0.12); // ombre douce
+
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.card:hover,
+.card:hover * {
+  color: #fff !important; // texte et icône blancs à l'intérieur
+  fill: #fff !important;
 }
 
-#container a {
-  text-decoration: none;
+.ion-icon:hover {
+  color: #fff;
 }
